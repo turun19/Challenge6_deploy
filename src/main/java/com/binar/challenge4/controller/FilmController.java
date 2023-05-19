@@ -59,7 +59,7 @@ public class FilmController {
         return new ResponseEntity<String>("Data berhasil di update", HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteFilmById/{filmId}")
+    @DeleteMapping("/deleteFilmById")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deleteFilmById(@RequestParam(name = "filmCode") Long id) {
         filmService.deleteFilmById(id);

@@ -48,7 +48,7 @@ public class UserController {
         return new ResponseEntity<>("Data berhasil di update", HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteUserById/{userId}")
+    @DeleteMapping("/deleteUserById")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<String> deleteUserById(@RequestParam(name = "userId") Long id) {
         userService.deleteUser(id);
